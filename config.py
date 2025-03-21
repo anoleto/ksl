@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import os
+import re
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -15,8 +17,8 @@ def read_bool(env_var: str) -> bool:
 
 TOKEN: str | None = os.getenv("TOKEN")
 DEBUG: bool = read_bool("DEBUG")
-OwnerID: str | None = os.getenv("OWNER_ID")
-MainServerID: str | None = os.getenv("MAIN_SERVER_ID")
+OwnerID: int | None = int(os.getenv("OWNER_ID"))
+MainServerID: int | None = int(os.getenv("MAIN_SERVER_ID"))
 
 Status: str | None = os.getenv("STATUS")
 
@@ -30,10 +32,10 @@ db_config: dict[str, str | None] = {
 Bancho: str | None = os.getenv("BANCHO")
 BanchoApiKey: str | None = os.getenv("BANCHO_API_KEY")
 
-ownercheckmotd: list[str] = read_list("OWNERCHECKMOTD")
+ownercheckmotd: list[str] = read_list("OWNER_MOTD")
 
 lastfm: str | None = os.getenv("LASTFM")
 
 use_start_prompt: bool = read_bool("USE_START_PROMPT")
-starting_prompt_id: str | None = os.getenv("STARTING_PROMPT_ID")
+starting_prompt_id: int | None = int(os.getenv("STARTING_PROMPT_ID"))
 MODEL: str | None = os.getenv("MODEL")

@@ -8,11 +8,11 @@ available_commands: List[str] = [
 
 from .ping import Ping
 from .info import Info
-from .eval import Eval
+from .owner import Owner
 
 __all__ = [
     'Ping',
     'Info',
-    'Eval',
+    'Owner',
     'available_commands'
 ]

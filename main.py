@@ -18,7 +18,6 @@ from objects import glob
 from commands import CATEGORIES
 from utils.help import Help
 from commands.guilds.prefix import get_prefix
-from dotenv import load_dotenv
 
 class Bot(commands.Bot):
     def __init__(self) -> None:
