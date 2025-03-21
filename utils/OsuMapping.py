@@ -4,18 +4,18 @@ from enum import Enum
 import osrparse
 
 class Mode(Enum):
-    VN_STD = REFX_STD = 0
-    VN_TAIKO = REFX_TAIKO = 1
-    VN_CATCH = REFX_CATCH = 2
-    VN_MANIA = REFX_MANIA = 3
-    RX_STD = SHAYMI_STD = 4
-    RX_TAIKO = SHAYMI_TAIKO = 5
-    RX_CATCH = SHAYMI_CATCH = 6
-    RX_MANIA = SHAYMI_MANIA = 7  # NOTE: special case refx has 2 mania leaderboard
+    VN_STD = 0
+    VN_TAIKO = 1
+    VN_CATCH = 2
+    VN_MANIA = 3
+    RX_STD = 4
+    RX_TAIKO = 5
+    RX_CATCH = 6
+    RX_MANIA = 7  # NOTE: special case, 001 has 2 mania leaderboards
     AP_STD = 8
 
     @classmethod
-    def from_string(cls, mode_str: str) -> int:
+    def from_string(cls, mode_str: str) -> "Mode":
         mode_mapping = {
             "vn!std": cls.VN_STD,
             "vn!taiko": cls.VN_TAIKO,
@@ -27,15 +27,15 @@ class Mode(Enum):
             "rx!mania": cls.RX_MANIA,
             "ap!std": cls.AP_STD,
 
-            # NOTE: refx mapping
-            "refx!std": cls.REFX_STD,
-            "refx!taiko": cls.REFX_TAIKO,
-            "refx!catch": cls.REFX_CATCH,
-            "refx!mania": cls.REFX_MANIA,
-            "shaymi!std": cls.SHAYMI_STD,
-            "shaymi!taiko": cls.SHAYMI_TAIKO,
-            "shaymi!catch": cls.SHAYMI_CATCH,
-            "shaymi!mania": cls.SHAYMI_MANIA,
+            # NOTE: 001 mapping
+            "001!std": cls.VN_STD,
+            "001!taiko": cls.VN_TAIKO,
+            "001!catch": cls.VN_CATCH,
+            "001!mania": cls.VN_MANIA,
+            "002!std": cls.RX_STD,
+            "002!taiko": cls.RX_TAIKO,
+            "002!catch": cls.RX_CATCH,
+            "002!mania": cls.RX_MANIA,
         }
 
         return mode_mapping.get(mode_str.lower(), cls.VN_STD).value
@@ -43,18 +43,18 @@ class Mode(Enum):
     @classmethod
     def to_string(cls, mode_id: int) -> str:
         int2mode = {
-            0: "refx!std",
-            1: "refx!taiko",
-            2: "refx!catch",
-            3: "refx!mania",
-            4: "shaymi!std",
-            5: "shaymi!taiko",
-            6: "shaymi!catch",
-            7: "shaymi!mania",
+            0: "001!std",
+            1: "001!taiko",
+            2: "001!catch",
+            3: "001!mania",
+            4: "002!std",
+            5: "002!taiko",
+            6: "002!catch",
+            7: "002!mania",
             8: "ap!std"
         }
         
-        return int2mode.get(mode_id, "refx!std")
+        return int2mode.get(mode_id, "001!std")
     
 class Mods(Enum):
     NOMOD = 0
