@@ -196,7 +196,7 @@ def parse_performance_output(output: str) -> Tuple[float, Dict[str, float]]:
     
     return pp_value, performance
 
-def calculate_osu_tools(osu_file_path: str, scores: Iterable[ScoreParams], osu_tools_base_path: str = '../osu-tools') -> list[Dict[str, Any]]:
+def calculate_osu_tools(osu_file_path: str, scores: Iterable[ScoreParams], osu_tools_base_path: str = '../osutools') -> list[Dict[str, Any]]:
     """
     Calculate performance using osu-tools
     
