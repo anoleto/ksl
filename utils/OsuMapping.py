@@ -27,7 +27,7 @@ class Mode(Enum):
             "rx!mania": cls.RX_MANIA,
             "ap!std": cls.AP_STD,
 
-            # NOTE: 001 mapping
+            # NOTE: refx mapping
             "001!std": cls.VN_STD,
             "001!taiko": cls.VN_TAIKO,
             "001!catch": cls.VN_CATCH,

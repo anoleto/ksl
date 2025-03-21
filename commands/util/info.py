@@ -57,7 +57,7 @@ class Info(commands.Cog):
             f"python version: [{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}](https://www.python.org/)\n"
         )
 
-        info += "\n\n**[source code](https://github.com/anoleto/discord-bot)**\n"
+        info += "\n\n**[source code](https://github.com/anoleto/ksl)**\n"
         
         embed = discord.Embed(title=f"{ctx.bot.user}'s info", 
                               description=info, color=0x424549, 

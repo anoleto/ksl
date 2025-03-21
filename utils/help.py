@@ -28,7 +28,7 @@ class Help(commands.HelpCommand):
         # mode args
         help_text += (
             "\nmode args: vn!std, vn!taiko, vn!mania, vn!ctb | rx!std, rx!taiko, rx!ctb, rx!mania (only for refx) | ap!std"
-            "\nargs accepts *vn* to *refx* or *rx* to *shaymi*" # NOTE: fix grammar??
+            "\nargs accepts *vn* to *001* or *rx* to *002*" # TODO: fix grammar??  its 2025 now when would you fix the grammar
             )
 
         await self.send_help_message(self.context, help_text)
