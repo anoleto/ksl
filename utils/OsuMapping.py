@@ -11,7 +11,7 @@ class Mode(Enum):
     RX_STD = 4
     RX_TAIKO = 5
     RX_CATCH = 6
-    RX_MANIA = 7  # NOTE: special case, 001 has 2 mania leaderboards
+    RX_MANIA = 7  # NOTE: special case, refx has 2 mania leaderboards
     AP_STD = 8
 
     @classmethod
